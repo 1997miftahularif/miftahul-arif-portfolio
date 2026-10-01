@@ -94,6 +94,6 @@ Portfolio: https://miftahularif.vercel.app
 
 ## Live Portfolio URL
 
-`YOUR_PORTFOLIO_URL`
+`https://miftahularif.vercel.app`
 
 Replace this with the deployed Vercel/portfolio URL after deployment.
