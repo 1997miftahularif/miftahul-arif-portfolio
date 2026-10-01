@@ -31,8 +31,8 @@ A real internal administrative web application built to move a repetitive spread
 This is a static website. No build step is required.
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/miftahul-arif-portfolioYOUR_USERNAME/YOUR_REPOSITORY.git
-cd YOUR_REPOSITORY
+git clone https://github.com/1997miftahularif/miftahul-arif-portfolio.git
+cd miftahul-arif-portfolio
 ```
 
 Open `index.html` in a browser, or use any static local server.
