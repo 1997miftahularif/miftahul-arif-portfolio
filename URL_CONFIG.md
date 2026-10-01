@@ -11,7 +11,7 @@ Recommended repository name:
 
 Recommended final URLs:
 
-- GitHub: `https://github.com/YOUR_GITHUB_USERNAME/miftahul-arif-portfolio`
-- Portfolio: `YOUR_PORTFOLIO_URL`
+- GitHub: `https://github.com/1997miftahularif/miftahul-arif-portfolio.git`
+- Portfolio: `https://miftahularif.vercel.app`
 
 Do not place Supabase service-role keys, Cloudinary API secrets, passwords, or other private credentials in this repository.
