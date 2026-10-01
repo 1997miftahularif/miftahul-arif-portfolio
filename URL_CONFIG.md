@@ -3,7 +3,7 @@
 Before publishing, replace these placeholders:
 
 - `https://github.com/1997miftahularif/miftahul-arif-portfolio.git` → your actual GitHub username
-- `YOUR_PORTFOLIO_URL` → the deployed portfolio URL
+- `https://miftahularif.vercel.app` → the deployed portfolio URL
 
 Recommended repository name:
 
