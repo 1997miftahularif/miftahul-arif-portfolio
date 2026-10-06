@@ -1,17 +1,11 @@
 # URL Configuration
 
-Before publishing, replace these placeholders:
+Replace these values before final publishing if needed:
 
-- `https://github.com/1997miftahularif/miftahul-arif-portfolio.git` → your actual GitHub username
-- `https://miftahularif.vercel.app` → the deployed portfolio URL
-
-Recommended repository name:
-
-`miftahul-arif-portfolio`
-
-Recommended final URLs:
-
-- GitHub: `https://github.com/1997miftahularif/miftahul-arif-portfolio.git`
+- GitHub repository: `https://github.com/1997miftahularif/miftahul-arif-portfolio.git`
 - Portfolio: `https://miftahularif.vercel.app`
+- Employee reporting application: `https://laporan-kegiatan-kanri.vercel.app`
 
-Do not place Supabase service-role keys, Cloudinary API secrets, passwords, or other private credentials in this repository.
+If the GitHub repository is not ready to be public, remove or hide the repository link rather than exposing unfinished or private source code.
+
+Do not place Supabase service-role keys, Cloudinary API secrets, passwords, tokens, or other private credentials in this repository.

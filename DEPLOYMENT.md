@@ -1,37 +1,22 @@
-# Deployment Checklist
+# Deployment
 
-## Before GitHub upload
+## Static portfolio
 
-- [ ] Rename repository, for example: `miftahul-arif-portfolio`
-- [ ] Replace `https://github.com/` in `index.html` with your real GitHub profile URL.
-- [ ] Add real screenshots to `assets/images/`.
-- [ ] Copy the final Resume/CV files into `assets/files/` if you want them downloadable.
-- [ ] Review all wording and dates.
-- [ ] Verify email and portfolio URL.
+This portfolio is a plain HTML/CSS/JavaScript site. No build command or environment variables are required.
 
-## GitHub
+### Vercel
 
-```bash
-git init
-git add .
-git commit -m "Initial portfolio"
-git branch -M main
-git remote add origin https://github.com/1997miftahularif/miftahul-arif-portfolio.git
-git push -u origin main
-```
+1. Push the portfolio folder to GitHub.
+2. Import the repository into Vercel.
+3. Select **Other / static** if Vercel asks for a framework.
+4. Leave the build command empty.
+5. Deploy.
 
-## Vercel
+## Final checks before publishing
 
-1. Sign in to Vercel.
-2. Add New Project.
-3. Import the GitHub repository.
-4. Framework Preset: Other.
-5. Build Command: leave empty.
-6. Output Directory: leave empty / root.
-7. Deploy.
-
-The project is static and does not require a server or environment variables.
-
-## Recommended next improvement
-
-Add real project screenshots. Do not upload confidential employee data, private documents, credentials, API keys, or private database information.
+- Verify the GitHub URL in `index.html`.
+- Verify the live application URL in `projects/employee-reporting-system/index.html`.
+- Replace screenshot placeholders in `assets/images/project/`.
+- Redact all employee/private data from screenshots.
+- Confirm the resume file in `assets/files/` is the latest version.
+- Confirm the portfolio itself does not contain API keys, service-role keys, passwords, tokens, or private data.
