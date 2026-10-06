@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#11151a"/>
+<rect x="70" y="70" width="1460" height="760" rx="20" fill="#171c22" stroke="#2a3139" stroke-width="3" stroke-dasharray="12 10"/>
+<text x="800" y="390" fill="#c7ff4a" font-family="Arial, sans-serif" font-size="44" font-weight="700" text-anchor="middle">04 — Attendance Tab</text>
+<text x="800" y="455" fill="#a5adb7" font-family="Arial, sans-serif" font-size="25" text-anchor="middle">Replace with a screenshot showing attendance records and supporting photo upload.</text>
+<text x="800" y="510" fill="#6f7882" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">Portfolio placeholder — replace this file with your real screenshot.</text>
+</svg>
