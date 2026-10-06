@@ -1,6 +1,6 @@
 # Miftahul Arif — Portfolio
 
-Personal portfolio website for **Miftahul Arif**, focused on AI automation, web applications, business process automation, data/reporting workflows, and visual communication.
+Personal portfolio website for **Miftahul Arif**, focused on digital solutions, web applications, business process automation, reporting workflows, and AI-assisted development.
 
 ## Featured project
 
@@ -77,13 +77,15 @@ Then link them from the featured project page.
 
 ## Career positioning
 
-The site intentionally positions Miftahul Arif around:
+The site positions Miftahul Arif around:
 
-- AI Automation & Application Development
-- Junior Full-Stack Development
-- Data & Business Process Automation
+- Digital Solutions
+- Web Applications
+- Business Process Automation
+- Reporting & Workflow Automation
+- AI-Assisted Development
 
-Graphic design and digital marketing remain part of the professional history and supporting skill set.
+The current technical foundation is HTML, CSS, and JavaScript, expanded through hands-on learning and AI-assisted development. Graphic design, digital marketing, and administrative operations remain important parts of the professional background.
 
 ## Contact
 
