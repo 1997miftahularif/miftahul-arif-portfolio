@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuppware — Tailwind CSS Version</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<!-- TUPPWARE — Tailwind Play version
+     Paste this entire file into the HTML panel at https://play.tailwindcss.com/
+     Tailwind Play already provides Tailwind utilities, so no CDN/config script is needed.
+-->
+<div class="min-h-screen bg-white font-sans text-[#26223a] antialiased">
+  <div class="bg-[#51258b] px-4 py-2 text-center text-xs font-semibold tracking-wide text-white sm:text-sm">
+    ✨ Temani hari aktifmu dengan pilihan botol yang penuh warna
+  </div>
+
+  <header class="sticky top-0 z-40 border-b border-[#ece7f2] bg-white/95 backdrop-blur">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Navigasi utama">
+      <a href="#home" class="flex items-center gap-2" aria-label="Tuppware beranda">
+        <span class="grid h-10 w-10 place-items-center rounded-2xl bg-[#51258b] text-xl font-extrabold text-white">T</span>
+        <span class="text-2xl font-extrabold tracking-tight text-[#51258b]">tuppware<span class="text-[#ed4caa]">.</span></span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a class="text-sm font-semibold transition hover:text-[#7b4bd1]" href="#koleksi">Koleksi</a>
+        <a class="text-sm font-semibold transition hover:text-[#7b4bd1]" href="#keunggulan">Keunggulan</a>
+        <a class="text-sm font-semibold transition hover:text-[#7b4bd1]" href="#penghargaan">Komitmen</a>
+        <a class="text-sm font-semibold transition hover:text-[#7b4bd1]" href="#beli">Temukan Kami</a>
+      </div>
+      <a href="#koleksi" class="hidden rounded-full bg-[#51258b] px-5 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-[#7b4bd1] md:inline-flex">Jelajahi Produk ↗</a>
+      <button id="menu-toggle" class="grid h-10 w-10 place-items-center rounded-xl border border-[#ece7f2] text-xl md:hidden" aria-label="Buka menu" aria-expanded="false">☰</button>
+    </nav>
+    <div id="mobile-menu" class="hidden border-t border-[#ece7f2] bg-white px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-semibold">
+        <a href="#koleksi">Koleksi</a><a href="#keunggulan">Keunggulan</a><a href="#penghargaan">Komitmen</a><a href="#beli">Temukan Kami</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="overflow-hidden bg-[#f7f3fb]">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:py-20 lg:grid-cols-2 lg:px-8 lg:py-24">
+        <div class="relative z-10">
+          <span class="inline-flex items-center gap-2 rounded-full border border-purple-100 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.16em] text-[#51258b] shadow-sm"><span class="h-2 w-2 rounded-full bg-[#ed4caa]"></span> Stay hydrated, stay you</span>
+          <h1 class="mt-6 max-w-xl text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">Bawa gaya,<br><span class="text-[#51258b]">bawa kebiasaan</span><br><span class="text-[#ed4caa]">baik.</span></h1>
+          <p class="mt-6 max-w-lg text-base leading-7 text-gray-600 sm:text-lg">Botol minum penuh warna untuk menemani setiap langkahmu. Praktis dibawa, nyaman digunakan, dan cocok untuk rutinitas sehari-hari.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#koleksi" class="rounded-full bg-[#51258b] px-6 py-3.5 text-sm font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#7b4bd1]">Lihat Koleksi →</a>
+            <a href="#keunggulan" class="rounded-full border border-purple-200 bg-white px-6 py-3.5 text-sm font-bold text-[#51258b] transition hover:border-[#51258b]">Kenali Tuppware</a>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-6 text-sm text-gray-600">
+            <span class="flex items-center gap-2"><span class="grid h-8 w-8 place-items-center rounded-full bg-white text-[#51258b]">✓</span> Praktis dibawa</span>
+            <span class="flex items-center gap-2"><span class="grid h-8 w-8 place-items-center rounded-full bg-white text-[#51258b]">♡</span> Warna ekspresif</span>
+          </div>
+        </div>
+        <div class="relative mx-auto flex min-h-[390px] w-full max-w-xl items-center justify-center sm:min-h-[470px]">
+          <div class="absolute h-72 w-72 rounded-full bg-[#e7d8ff] sm:h-96 sm:w-96"></div>
+          <div class="absolute right-8 top-8 h-16 w-16 rotate-12 rounded-3xl bg-[#ed4caa]/20"></div>
+          <div class="absolute bottom-10 left-8 h-12 w-12 rounded-full bg-emerald-200"></div>
+          <div class="absolute left-5 top-14 -rotate-6 rounded-2xl bg-white px-4 py-3 shadow-xl sm:left-8">
+            <p class="text-xs font-bold text-[#51258b]">YOUR DAILY</p><p class="text-lg font-extrabold">Hydration buddy ✦</p>
+          </div>
+          <div class="relative mt-8 flex items-end gap-3 sm:gap-6">
+            <div class="bottle bottle-lilac scale-90 sm:scale-100"><div class="bottle-label bg-[#51258b]">TUPPWARE</div></div>
+            <div class="bottle bottle-pink z-10 scale-110 sm:scale-125"><div class="bottle-label bg-white/20">TUPPWARE</div></div>
+            <div class="bottle bottle-mint scale-90 sm:scale-100"><div class="bottle-label bg-emerald-800/20">TUPPWARE</div></div>
+          </div>
+          <div class="absolute bottom-7 right-2 rotate-3 rounded-2xl bg-white px-4 py-3 shadow-xl sm:right-10">
+            <p class="text-xs text-gray-500">Warna favoritmu</p><p class="font-extrabold text-[#51258b]">Pilih yang kamu suka!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-[#ece7f2] bg-white">
+      <div class="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-5 py-7 sm:grid-cols-4 lg:px-8">
+        <div class="text-center"><p class="text-2xl font-extrabold text-[#51258b] sm:text-3xl">01</p><p class="mt-1 text-xs font-semibold text-gray-500 sm:text-sm">Bawa setiap hari</p></div>
+        <div class="text-center"><p class="text-2xl font-extrabold text-[#51258b] sm:text-3xl">02</p><p class="mt-1 text-xs font-semibold text-gray-500 sm:text-sm">Warna ceria</p></div>
+        <div class="text-center"><p class="text-2xl font-extrabold text-[#51258b] sm:text-3xl">03</p><p class="mt-1 text-xs font-semibold text-gray-500 sm:text-sm">Gaya personal</p></div>
+        <div class="text-center"><p class="text-2xl font-extrabold text-[#51258b] sm:text-3xl">04</p><p class="mt-1 text-xs font-semibold text-gray-500 sm:text-sm">Pilihan praktis</p></div>
+      </div>
+    </section>
+
+    <section id="koleksi" class="mx-auto max-w-7xl px-5 py-16 sm:py-20 lg:px-8">
+      <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-[#ed4caa]">Temukan favoritmu</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Koleksi pilihan</h2><p class="mt-3 max-w-xl text-gray-600">Temukan warna yang sesuai dengan mood dan aktivitasmu.</p></div>
+        <div class="flex flex-wrap gap-2" role="group" aria-label="Filter produk">
+          <button class="filter-btn rounded-full bg-[#51258b] px-4 py-2 text-sm font-bold text-white" data-filter="all">Semua</button>
+          <button class="filter-btn rounded-full border border-[#ece7f2] px-4 py-2 text-sm font-bold text-gray-600 hover:border-[#51258b]" data-filter="color">Warna ceria</button>
+          <button class="filter-btn rounded-full border border-[#ece7f2] px-4 py-2 text-sm font-bold text-gray-600 hover:border-[#51258b]" data-filter="daily">Harian</button>
+        </div>
+      </div>
+      <div id="product-grid" class="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="product-card group rounded-3xl border border-[#ece7f2] bg-white p-4 transition hover:-translate-y-1 hover:shadow-xl" data-category="color daily">
+          <div class="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-[#fff0f8]"><span class="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold text-[#ed4caa]">Best mood</span><div class="bottle bottle-pink"><div class="bottle-label bg-white/20">TUPPWARE</div></div></div>
+          <div class="flex items-start justify-between gap-2 pt-4"><div><h3 class="font-extrabold">Blush Pop</h3><p class="mt-1 text-sm text-gray-500">Pink · Enerjik & ceria</p></div><button class="favorite-btn grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ece7f2] text-lg text-gray-400 hover:text-[#ed4caa]" aria-label="Favoritkan Blush Pop" aria-pressed="false">♡</button></div>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-gray-500">Botol minum</span><a href="#beli" class="text-sm font-extrabold text-[#51258b]">Lihat pilihan ↗</a></div>
+        </article>
+        <article class="product-card group rounded-3xl border border-[#ece7f2] bg-white p-4 transition hover:-translate-y-1 hover:shadow-xl" data-category="color daily">
+          <div class="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-[#f2edff]"><span class="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold text-[#51258b]">Soft tone</span><div class="bottle bottle-lilac"><div class="bottle-label bg-[#51258b]/40">TUPPWARE</div></div></div>
+          <div class="flex items-start justify-between gap-2 pt-4"><div><h3 class="font-extrabold">Lilac Dream</h3><p class="mt-1 text-sm text-gray-500">Lilac · Tenang & manis</p></div><button class="favorite-btn grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ece7f2] text-lg text-gray-400 hover:text-[#ed4caa]" aria-label="Favoritkan Lilac Dream" aria-pressed="false">♡</button></div>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-gray-500">Botol minum</span><a href="#beli" class="text-sm font-extrabold text-[#51258b]">Lihat pilihan ↗</a></div>
+        </article>
+        <article class="product-card group rounded-3xl border border-[#ece7f2] bg-white p-4 transition hover:-translate-y-1 hover:shadow-xl" data-category="color">
+          <div class="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-[#eafff6]"><span class="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold text-emerald-700">Fresh pick</span><div class="bottle bottle-mint"><div class="bottle-label bg-emerald-800/20">TUPPWARE</div></div></div>
+          <div class="flex items-start justify-between gap-2 pt-4"><div><h3 class="font-extrabold">Mint Breeze</h3><p class="mt-1 text-sm text-gray-500">Mint · Segar & ringan</p></div><button class="favorite-btn grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ece7f2] text-lg text-gray-400 hover:text-[#ed4caa]" aria-label="Favoritkan Mint Breeze" aria-pressed="false">♡</button></div>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-gray-500">Botol minum</span><a href="#beli" class="text-sm font-extrabold text-[#51258b]">Lihat pilihan ↗</a></div>
+        </article>
+        <article class="product-card group rounded-3xl border border-[#ece7f2] bg-white p-4 transition hover:-translate-y-1 hover:shadow-xl" data-category="daily">
+          <div class="relative flex h-56 items-center justify-center overflow-hidden rounded-2xl bg-[#edf7ff]"><span class="absolute left-4 top-4 rounded-full bg-white px-3 py-1 text-xs font-bold text-blue-700">Everyday</span><div class="bottle bottle-blue"><div class="bottle-label bg-blue-800/20">TUPPWARE</div></div></div>
+          <div class="flex items-start justify-between gap-2 pt-4"><div><h3 class="font-extrabold">Blue Wave</h3><p class="mt-1 text-sm text-gray-500">Biru · Simpel & aktif</p></div><button class="favorite-btn grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#ece7f2] text-lg text-gray-400 hover:text-[#ed4caa]" aria-label="Favoritkan Blue Wave" aria-pressed="false">♡</button></div>
+          <div class="mt-4 flex items-center justify-between"><span class="text-xs font-semibold text-gray-500">Botol minum</span><a href="#beli" class="text-sm font-extrabold text-[#51258b]">Lihat pilihan ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="keunggulan" class="bg-[#f7f3fb] py-16 sm:py-20">
+      <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 lg:grid-cols-2 lg:px-8">
+        <div class="relative flex min-h-[300px] items-center justify-center rounded-[2rem] bg-gradient-to-br from-[#e8dcff] to-[#fce4f3] p-8">
+          <div class="absolute left-8 top-8 h-12 w-12 rotate-12 rounded-2xl bg-white/70"></div><div class="absolute bottom-8 right-8 h-16 w-16 rounded-full bg-white/70"></div>
+          <div class="relative rounded-3xl bg-white p-7 text-center shadow-xl"><div class="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-[#51258b] text-3xl text-white">✦</div><p class="mt-4 text-xs font-extrabold uppercase tracking-[.2em] text-[#ed4caa]">Make it yours</p><p class="mt-2 text-2xl font-extrabold">Kecil dalam tas,<br>besar untuk kebiasaan.</p></div>
+        </div>
+        <div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-[#ed4caa]">Kenapa Tuppware?</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Teman praktis untuk rutinitasmu.</h2><p class="mt-4 leading-7 text-gray-600">Pilihan botol minum yang menggabungkan tampilan menarik dan kemudahan untuk dibawa saat beraktivitas.</p>
+          <div class="mt-7 grid gap-5 sm:grid-cols-2">
+            <div class="rounded-2xl border border-[#ece7f2] bg-white p-5"><span class="grid h-10 w-10 place-items-center rounded-xl bg-[#fce4f3] text-xl">🎨</span><h3 class="mt-4 font-extrabold">Warna ekspresif</h3><p class="mt-2 text-sm leading-6 text-gray-500">Pilih warna yang mencerminkan gayamu.</p></div>
+            <div class="rounded-2xl border border-[#ece7f2] bg-white p-5"><span class="grid h-10 w-10 place-items-center rounded-xl bg-[#e7dcff] text-xl">🎒</span><h3 class="mt-4 font-extrabold">Mudah dibawa</h3><p class="mt-2 text-sm leading-6 text-gray-500">Cocok menemani aktivitas harian.</p></div>
+            <div class="rounded-2xl border border-[#ece7f2] bg-white p-5"><span class="grid h-10 w-10 place-items-center rounded-xl bg-[#dff8ef] text-xl">💧</span><h3 class="mt-4 font-extrabold">Ingat minum</h3><p class="mt-2 text-sm leading-6 text-gray-500">Bantu jadikan hidrasi bagian dari rutinitas.</p></div>
+            <div class="rounded-2xl border border-[#ece7f2] bg-white p-5"><span class="grid h-10 w-10 place-items-center rounded-xl bg-[#e4f2ff] text-xl">✨</span><h3 class="mt-4 font-extrabold">Gaya sehari-hari</h3><p class="mt-2 text-sm leading-6 text-gray-500">Detail sederhana dengan kesan ceria.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="penghargaan" class="mx-auto max-w-7xl px-5 py-16 sm:py-20 lg:px-8">
+      <div class="text-center"><p class="text-xs font-extrabold uppercase tracking-[.2em] text-[#ed4caa]">Komitmen kami</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Pilihan baik, setiap hari</h2><p class="mx-auto mt-3 max-w-2xl text-gray-600">Kami percaya kebiasaan baik dimulai dari langkah kecil. Pilih produk sesuai kebutuhan dan selalu ikuti petunjuk perawatan yang tertera.</p></div>
+      <div class="mt-9 grid gap-5 md:grid-cols-3">
+        <div class="rounded-3xl border border-[#ece7f2] p-7 text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#f7f3fb] text-2xl">🏅</div><h3 class="mt-4 font-extrabold">Mengutamakan kualitas</h3><p class="mt-2 text-sm leading-6 text-gray-500">Periksa detail spesifikasi produk sebelum membeli.</p></div>
+        <div class="rounded-3xl border border-[#ece7f2] p-7 text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#f7f3fb] text-2xl">♻️</div><h3 class="mt-4 font-extrabold">Kebiasaan pakai ulang</h3><p class="mt-2 text-sm leading-6 text-gray-500">Gunakan botol sesuai petunjuk untuk mendukung rutinitas reusable.</p></div>
+        <div class="rounded-3xl border border-[#ece7f2] p-7 text-center"><div class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#f7f3fb] text-2xl">💜</div><h3 class="mt-4 font-extrabold">Pilihan penuh gaya</h3><p class="mt-2 text-sm leading-6 text-gray-500">Temukan warna yang pas dengan keseharianmu.</p></div>
+      </div>
+      <p class="mt-5 text-center text-xs text-gray-400">Bagian ini menampilkan nilai brand, bukan klaim penghargaan atau sertifikasi resmi.</p>
+    </section>
+
+    <section id="beli" class="px-5 pb-16 sm:pb-20">
+      <div class="mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#51258b] px-6 py-10 text-white sm:px-12 sm:py-14">
+        <div class="grid items-center gap-8 lg:grid-cols-2"><div><p class="text-xs font-extrabold uppercase tracking-[.2em] text-pink-200">Ready for your day?</p><h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Temukan Tuppware favoritmu.</h2><p class="mt-4 max-w-lg leading-7 text-purple-100">Cek kanal belanja pilihanmu untuk melihat produk, warna, dan ketersediaan terbaru.</p></div>
+          <div class="flex flex-wrap gap-3 lg:justify-end"><a class="rounded-full bg-white px-5 py-3 font-bold text-[#51258b] transition hover:bg-purple-100" href="https://shopee.co.id/" target="_blank" rel="noopener noreferrer">Shopee ↗</a><a class="rounded-full border border-white/40 px-5 py-3 font-bold text-white transition hover:bg-white/10" href="https://www.tokopedia.com/" target="_blank" rel="noopener noreferrer">Tokopedia ↗</a><a class="rounded-full border border-white/40 px-5 py-3 font-bold text-white transition hover:bg-white/10" href="https://www.lazada.co.id/" target="_blank" rel="noopener noreferrer">Lazada ↗</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-[#ece7f2] bg-white"><div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8"><a href="#home" class="flex items-center gap-2"><span class="grid h-9 w-9 place-items-center rounded-xl bg-[#51258b] font-extrabold text-white">T</span><span class="text-xl font-extrabold text-[#51258b]">tuppware<span class="text-[#ed4caa]">.</span></span></a><p class="text-sm text-gray-500">Bawa gaya, bawa kebiasaan baik.</p><p class="text-xs text-gray-400">© <span id="year"></span> Tuppware. Konsep website demo.</p></div></footer>
+</div>
+
+<style>
+  /* Custom CSS hanya untuk ilustrasi botol; layout dan komponen memakai Tailwind utilities. */
+  .bottle { position: relative; width: 96px; height: 220px; border-radius: 26px 26px 22px 22px; box-shadow: inset -9px 0 14px #00000012, inset 8px 0 12px #ffffff88, 0 18px 26px #30174718; }
+  .bottle::before { content:""; position:absolute; width:48px; height:24px; left:24px; top:-17px; border-radius:8px 8px 4px 4px; background:#29223a; box-shadow: inset 0 4px 0 #ffffff35; }
+  .bottle::after { content:""; position:absolute; width:58px; height:9px; left:19px; top:7px; border-radius:8px; background:#ffffff55; }
+  .bottle-label { position:absolute; top:78px; left:8px; right:8px; padding:10px 3px; text-align:center; border-radius:10px; color:#fff; font-weight:800; font-size:10px; letter-spacing:1.5px; transform:rotate(-4deg); }
+  .bottle-pink { background:linear-gradient(110deg,#f9a5d2,#ed4caa 68%,#d83392); }
+  .bottle-lilac { background:linear-gradient(110deg,#d9c4ff,#9b73e5 68%,#7951c4); }
+  .bottle-mint { background:linear-gradient(110deg,#b9f2dd,#52c7a4 68%,#2ba987); }
+  .bottle-blue { background:linear-gradient(110deg,#a9d8ff,#4c9be8 68%,#2874bd); }
+</style>
+
+<script>
+  // Menu mobile
+  const menuToggle = document.querySelector("#menu-toggle");
+  const mobileMenu = document.querySelector("#mobile-menu");
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.textContent = isOpen ? "☰" : "✕";
+    });
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+  }
+
+  // Filter produk
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const productCards = document.querySelectorAll(".product-card");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      filterButtons.forEach((item) => {
+        item.classList.remove("bg-[#51258b]", "text-white");
+        item.classList.add("border", "border-[#ece7f2]", "text-gray-600");
+      });
+      button.classList.add("bg-[#51258b]", "text-white");
+      button.classList.remove("border", "border-[#ece7f2]", "text-gray-600");
+      productCards.forEach((card) => {
+        const categories = card.dataset.category.split(" ");
+        card.classList.toggle("hidden", filter !== "all" && !categories.includes(filter));
+      });
+    });
+  });
+
+  // Favorit produk
+  document.querySelectorAll(".favorite-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const active = button.getAttribute("aria-pressed") === "true";
+      button.setAttribute("aria-pressed", String(!active));
+      button.textContent = active ? "♡" : "♥";
+      button.classList.toggle("text-[#ed4caa]", !active);
+      button.classList.toggle("bg-pink-50", !active);
+      button.classList.toggle("text-gray-400", active);
+    });
+  });
+
+  document.querySelector("#year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

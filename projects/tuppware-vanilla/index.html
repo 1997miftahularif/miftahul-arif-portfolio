@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Temukan wadah makanan, botol minum, dan perlengkapan rumah tangga Tuppware."
+  >
+  <meta name="theme-color" content="#51258b">
+  <title>Tuppware — Rumah Lebih Praktis</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">
+    Temukan cara lebih praktis untuk menyimpan makanan setiap hari ✨
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Buka menu navigasi"
+        aria-expanded="false"
+        aria-controls="navigation"
+      >☰</button>
+
+      <a class="brand" href="#beranda" aria-label="Tuppware, halaman beranda">
+        Tuppware<span>®</span>
+      </a>
+
+      <form class="search-form" id="searchForm" role="search">
+        <label class="sr-only" for="searchInput">Cari produk</label>
+        <input
+          id="searchInput"
+          name="q"
+          type="search"
+          placeholder="Cari produk Tuppware..."
+        >
+        <button type="submit" aria-label="Cari produk">⌕</button>
+      </form>
+
+      <nav class="navigation" id="navigation" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#produk">Produk</a>
+        <a href="#promo">Promo</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="accountButton" type="button" aria-label="Akun">♙</button>
+        <button class="icon-button cart-button" id="cartButton" type="button" aria-label="Keranjang belanja">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="beranda">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Praktis · Rapi · Berwarna</p>
+          <h1>Rumah Lebih Praktis dengan Tuppware</h1>
+          <p class="hero-description">
+            Temukan wadah makanan, botol minum, dan perlengkapan rumah
+            untuk menemani aktivitas sehari-hari.
+          </p>
+          <a class="button button-primary" href="#produk">
+            Belanja Sekarang <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="hero-art">
+          <img
+            class="hero-photo"
+            src="assets/images/hero-produk.jpg"
+            alt="Koleksi wadah makanan Tuppware warna-warni"
+            width="2164" height="727"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section container" id="kategori" aria-label="Kategori produk">
+      <a class="category-card" href="#produk" data-category="Wadah Makanan">
+        <span class="category-icon" aria-hidden="true">🥣</span>
+        <span><strong>Wadah Makanan</strong><small>Bekal dan penyimpanan</small></span>
+      </a>
+      <a class="category-card" href="#produk" data-category="Botol Minum">
+        <span class="category-icon" aria-hidden="true">🧴</span>
+        <span><strong>Botol Minum</strong><small>Teman aktivitas harian</small></span>
+      </a>
+      <a class="category-card" href="#produk" data-category="Kitchenware">
+        <span class="category-icon" aria-hidden="true">🍲</span>
+        <span><strong>Kitchenware</strong><small>Perlengkapan dapur</small></span>
+      </a>
+      <a class="category-card" href="#produk" data-category="Termos">
+        <span class="category-icon" aria-hidden="true">🥤</span>
+        <span><strong>Termos</strong><small>Praktis dibawa bepergian</small></span>
+      </a>
+    </section>
+
+    <section class="section container" id="produk">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Pilihan untuk Anda</p>
+          <h2>Produk Pilihan</h2>
+          <p class="section-description">Perlengkapan praktis untuk kebutuhan sehari-hari.</p>
+        </div>
+        <button class="text-button" id="showAllButton" type="button">Lihat Semua →</button>
+      </div>
+
+      <div class="filters" aria-label="Filter kategori produk">
+        <button class="filter-button is-active" type="button" data-filter="Semua">Semua Produk</button>
+        <button class="filter-button" type="button" data-filter="Wadah Makanan">Wadah Makanan</button>
+        <button class="filter-button" type="button" data-filter="Botol Minum">Botol Minum</button>
+        <button class="filter-button" type="button" data-filter="Kitchenware">Kitchenware</button>
+        <button class="filter-button" type="button" data-filter="Termos">Termos</button>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <article class="product-card" data-category="Wadah Makanan" data-name="Eco Plus Round Set">
+          <div class="product-visual">
+            <span class="product-badge">Terlaris</span>
+            <img class="product-photo" src="assets/images/eco-plus-round-set.jpg" alt="Set wadah makanan Eco Plus Round (4 pcs)" loading="lazy" width="823" height="823">
+          </div>
+          <div class="product-info">
+            <h3>Eco Plus Round Set (4 pcs)</h3>
+            <p>Set wadah serbaguna warna ceria</p>
+            <div class="product-price">Rp 359.000</div>
+            <div class="product-rating" aria-label="Rating 5 dari 5">★★★★★ <span>(120 ulasan)</span></div>
+            <div class="product-actions">
+              <button class="add-button" type="button" data-product="Eco Plus Round Set">Tambah ke Keranjang</button>
+              <button class="favorite-button" type="button" aria-label="Simpan Eco Plus Round Set ke favorit" aria-pressed="false">♡</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Botol Minum" data-name="Tumbler Neon">
+          <div class="product-visual">
+            <span class="product-badge">Pilihan</span>
+            <img class="product-photo" src="assets/images/tumbler-neon.jpg" alt="Tumbler Neon 750 ml" loading="lazy" width="823" height="823">
+          </div>
+          <div class="product-info">
+            <h3>Tumbler Neon 750 ml</h3>
+            <p>Botol minum untuk dibawa bepergian</p>
+            <div class="product-price">Rp 249.000</div>
+            <div class="product-rating" aria-label="Rating 5 dari 5">★★★★★ <span>(96 ulasan)</span></div>
+            <div class="product-actions">
+              <button class="add-button" type="button" data-product="Tumbler Neon">Tambah ke Keranjang</button>
+              <button class="favorite-button" type="button" aria-label="Simpan Tumbler Neon ke favorit" aria-pressed="false">♡</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Kitchenware" data-name="Smart Saver Bowl Set">
+          <div class="product-visual">
+            <img class="product-photo" src="assets/images/smart-saver-bowl-set.jpg" alt="Smart Saver Bowl Set" loading="lazy" width="823" height="823">
+          </div>
+          <div class="product-info">
+            <h3>Smart Saver Bowl Set</h3>
+            <p>Mangkuk praktis untuk dapur</p>
+            <div class="product-price">Rp 299.000</div>
+            <div class="product-rating" aria-label="Rating 5 dari 5">★★★★★ <span>(74 ulasan)</span></div>
+            <div class="product-actions">
+              <button class="add-button" type="button" data-product="Smart Saver Bowl Set">Tambah ke Keranjang</button>
+              <button class="favorite-button" type="button" aria-label="Simpan Smart Saver Bowl Set ke favorit" aria-pressed="false">♡</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card" data-category="Termos" data-name="Thermos Stainless">
+          <div class="product-visual">
+            <img class="product-photo" src="assets/images/thermos-stainless.jpg" alt="Thermos Stainless 500 ml" loading="lazy" width="823" height="823">
+          </div>
+          <div class="product-info">
+            <h3>Thermos Stainless 500 ml</h3>
+            <p>Desain ramping untuk aktivitas</p>
+            <div class="product-price">Rp 499.000</div>
+            <div class="product-rating" aria-label="Rating 5 dari 5">★★★★★ <span>(88 ulasan)</span></div>
+            <div class="product-actions">
+              <button class="add-button" type="button" data-product="Thermos Stainless">Tambah ke Keranjang</button>
+              <button class="favorite-button" type="button" aria-label="Simpan Thermos Stainless ke favorit" aria-pressed="false">♡</button>
+            </div>
+          </div>
+        </article>
+      </div>
+      <p class="empty-state" id="emptyState" hidden>Produk tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <section class="promo-section container" id="promo">
+      <div class="promo-copy">
+        <p class="eyebrow">Koleksi pilihan</p>
+        <h2>Koleksi untuk Hari yang Lebih Praktis</h2>
+        <p>Rapikan dapur dan bawa bekal favorit dengan perlengkapan pilihan.</p>
+        <a class="button button-light" href="#produk">Jelajahi Produk <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="promo-art">
+        <img
+          class="promo-photo"
+          src="assets/images/promo-koleksi.jpg"
+          alt="Koleksi perlengkapan dapur dan bekal Tuppware"
+          loading="lazy" width="2170" height="725"
+        >
+      </div>
+    </section>
+
+    <section class="benefits container" aria-label="Informasi layanan">
+      <div class="benefit-card">
+        <span class="benefit-icon" aria-hidden="true">♧</span>
+        <span><strong>Informasi Pengiriman</strong><small>Biaya dikonfirmasi saat pemesanan</small></span>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon" aria-hidden="true">▣</span>
+        <span><strong>Pembayaran Aman</strong><small>Konfirmasi pesanan secara langsung</small></span>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon" aria-hidden="true">◷</span>
+        <span><strong>Layanan Pelanggan</strong><small>Hubungi penjual untuk bantuan</small></span>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div>
+          <h2>Dapatkan kabar terbaru</h2>
+          <p>Masukkan email untuk menerima informasi produk dan promo.</p>
+        </div>
+        <form class="newsletter-form" id="newsletterForm">
+          <label class="sr-only" for="emailInput">Alamat email</label>
+          <input id="emailInput" type="email" placeholder="Alamat email Anda" required>
+          <button type="submit">Berlangganan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container" id="kontak">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#beranda">Tuppware<span>®</span></a>
+        <p>Perlengkapan rumah tangga untuk membantu aktivitas sehari-hari terasa lebih praktis.</p>
+        <div class="social-links" aria-label="Media sosial">
+          <a href="#kontak" aria-label="Instagram">ig</a>
+          <a href="#kontak" aria-label="Facebook">f</a>
+          <a href="#kontak" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div>
+        <h3>Navigasi</h3>
+        <ul><li><a href="#beranda">Beranda</a></li><li><a href="#kategori">Kategori</a></li><li><a href="#produk">Produk</a></li><li><a href="#promo">Promo</a></li></ul>
+      </div>
+      <div>
+        <h3>Bantuan</h3>
+        <ul><li><a href="#kontak">Cara Pemesanan</a></li><li><a href="#kontak">Pengiriman</a></li><li><a href="#kontak">Pertanyaan Umum</a></li><li><a href="#kontak">Hubungi Kami</a></li></ul>
+      </div>
+      <div>
+        <h3>Kontak Penjual</h3>
+        <ul><li>Email: emailanda@example.com</li><li>WhatsApp: tambahkan nomor Anda</li><li>Indonesia</li></ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>© 2026 Katalog Tuppware. Hak cipta dilindungi.</span>
+      <span>Contoh tampilan website — harga dan ketersediaan perlu dikonfirmasi.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

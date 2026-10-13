@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Administrative Service Data Analysis — a personal data analytics project using a fictional 2025 dataset: cleaning, validation, KPIs, and dashboard. By Miftahul Arif.">
+  <title>Administrative Service Data Analysis — Miftahul Arif</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="../../index.html">MA<span>.</span></a>
+      <div class="nav-links" style="display:flex"><a href="../../index.html#more-projects">← Back to projects</a></div>
+    </nav>
+  </header>
+
+  <main class="case project-detail">
+    <div class="container">
+      <a class="back" href="../../index.html#more-projects">← Back to projects</a>
+
+      <div class="case-header">
+        <p class="section-kicker">DATA ANALYSIS CASE STUDY</p>
+        <h1>Administrative Service Data Analysis</h1>
+        <p class="hero-copy">Cleaning, validating, and summarizing 1,208 raw service records to monitor application volume,
+          completion, service demand, and processing time — and presenting the result as a dashboard.</p>
+        <div class="tags"><span>Excel</span><span>Data Cleaning</span><span>Data Validation</span><span>KPI Reporting</span><span>Data Visualization</span></div>
+      </div>
+
+      <aside class="disclosure">
+        <strong>Fictional dataset, personal practice project.</strong>
+        All records are synthetic and were created for portfolio practice. This is not official data and does not
+        represent the performance of any government agency. Findings describe this dataset only.
+      </aside>
+
+      <noscript><p class="muted">The interactive dashboard needs JavaScript. The full write-up is in the PDF case study below.</p></noscript>
+
+      <section class="case-section" id="kpis-section">
+        <p class="section-kicker">HEADLINE NUMBERS</p>
+        <div class="kpi-grid" id="kpis"></div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-kicker">BUSINESS QUESTIONS & ANSWERS</p>
+        <p class="section-lead">The project was framed around seven questions. Each answer below is calculated from the cleaned data.</p>
+        <dl class="qa" id="qa"></dl>
+      </section>
+
+      <section class="case-section" id="dashboard">
+        <p class="section-kicker">DASHBOARD</p>
+
+        <article class="chart-card">
+          <div class="chart-head">
+            <div>
+              <h3>Applications by month</h3>
+              <p class="chart-sub" id="monthly-sub"></p>
+            </div>
+            <div class="seg" role="group" aria-label="Monthly metric" id="monthly-toggle">
+              <button type="button" class="active" data-metric="total" aria-pressed="true">Applications</button>
+              <button type="button" data-metric="rate" aria-pressed="false">Completion rate</button>
+            </div>
+          </div>
+          <div id="monthly"></div>
+          <p class="chart-note" id="monthly-note"></p>
+        </article>
+
+        <article class="chart-card">
+          <div class="chart-head">
+            <div>
+              <h3>Application status</h3>
+              <p class="chart-sub">Share of the 1,200 unique records by current status.</p>
+            </div>
+          </div>
+          <div id="status"></div>
+        </article>
+
+        <div class="chart-pair">
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>By district</h3>
+                <p class="chart-sub">Bars start at zero. Top three in the chosen metric are highlighted.</p>
+              </div>
+              <div class="seg" role="group" aria-label="District metric" id="district-toggle">
+                <button type="button" class="active" data-metric="total" aria-pressed="true">Applications</button>
+                <button type="button" data-metric="avgDays" aria-pressed="false">Avg. days</button>
+                <button type="button" data-metric="rate" aria-pressed="false">Completion</button>
+              </div>
+            </div>
+            <div id="district"></div>
+            <p class="chart-note">“Unknown” = 18 records with no district in the raw data. They were kept and flagged rather than deleted.</p>
+          </article>
+
+          <article class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h3>By service type</h3>
+                <p class="chart-sub">Same metrics, grouped by the service requested.</p>
+              </div>
+              <div class="seg" role="group" aria-label="Service metric" id="service-toggle">
+                <button type="button" class="active" data-metric="total" aria-pressed="true">Applications</button>
+                <button type="button" data-metric="avgDays" aria-pressed="false">Avg. days</button>
+                <button type="button" data-metric="rate" aria-pressed="false">Completion</button>
+              </div>
+            </div>
+            <div id="service"></div>
+          </article>
+        </div>
+
+        <details class="data-tables">
+          <summary>View the numbers as tables</summary>
+          <div id="tables"></div>
+        </details>
+      </section>
+
+      <section class="case-section">
+        <p class="section-kicker">WORKFLOW</p>
+        <div class="flow large-flow"><span>Raw data</span><b>→</b><span>Quality check</span><b>→</b><span>Cleaning</span><b>→</b><span>Validation</span><b>→</b><span>Analysis</span><b>→</b><span>Dashboard</span><b>→</b><span>Insights</span></div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-kicker">DATA QUALITY & CLEANING</p>
+        <p class="section-lead">The raw file contained common spreadsheet problems, added on purpose to practice finding and fixing them.
+          <span id="rows-line"></span></p>
+        <div class="table-wrap">
+          <table class="data-table" id="quality"></table>
+        </div>
+        <div class="case-grid two">
+          <article class="case-card">
+            <h3>Validation checks</h3>
+            <ul>
+              <li>Confirmed the unique Record_ID count after removing duplicates.</li>
+              <li>Checked category values after standardizing labels.</li>
+              <li>Confirmed every application date falls within 2025.</li>
+              <li>Recalculated all summaries from the cleaned records.</li>
+            </ul>
+          </article>
+          <article class="case-card">
+            <h3>Limitation</h3>
+            <p>Median imputation for missing ages is a simple practice technique. In a real project, the right
+              treatment depends on business context and data-governance rules, and the reason for the missing values
+              should be investigated first.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-kicker">RECOMMENDATIONS FOR A REAL REPORTING WORKFLOW</p>
+        <div class="case-grid three">
+          <article class="case-card"><h3>Monitor monthly volume</h3><p>Use one consistent monthly report to spot workload changes and plan staffing or follow-up.</p></article>
+          <article class="case-card"><h3>Track status ageing</h3><p>Add days-in-current-status and a clear service-level target to separate normal processing from overdue cases.</p></article>
+          <article class="case-card"><h3>Improve data entry controls</h3><p>Dropdown lists, required fields, date validation, and unique record IDs prevent inconsistent values at the source.</p></article>
+          <article class="case-card"><h3>Define KPI rules</h3><p>Document what counts as “completed” and whether the completion-rate denominator includes rejected or withdrawn cases.</p></article>
+          <article class="case-card"><h3>Review missing data</h3><p>Find out why fields are empty before deciding to impute, exclude, or flag them.</p></article>
+          <article class="case-card"><h3>Read results with care</h3><p>Differences in counts or days are descriptive. They do not prove service quality or cause, and this data is randomly generated.</p></article>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="section-kicker">SKILLS DEMONSTRATED</p>
+        <div class="tags skill-tags"><span>Data cleaning</span><span>Data validation</span><span>Data quality</span><span>Excel reporting</span><span>KPI calculation</span><span>Descriptive analysis</span><span>Data visualization</span><span>Communicating limitations</span></div>
+      </section>
+
+      <section class="case-section final-case">
+        <p class="section-kicker">DOWNLOADS</p>
+        <div class="hero-actions">
+          <a class="button primary" href="../../assets/files/Administrative_Service_Data_Analysis_Workbook.xlsx" download>Excel workbook (.xlsx)</a>
+          <a class="button secondary" href="../../assets/files/Administrative_Service_Data_Analysis_Case_Study.pdf" target="_blank" rel="noopener">PDF case study</a>
+          <a class="button secondary" href="../../index.html#contact">Contact Miftahul</a>
+        </div>
+        <p class="muted small-note">The workbook contains Raw_Data, Cleaned_Data, monthly, district and service summaries, and the Excel dashboard. All records are fictional.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><span>© <span id="year"></span> Miftahul Arif</span><span>Digital Solutions • Web Applications • Business Process Automation</span></div>
+  </footer>
+
+  <script src="analysis-data.js"></script>
+  <script src="analysis.js"></script>
+</body>
+
+</html>
