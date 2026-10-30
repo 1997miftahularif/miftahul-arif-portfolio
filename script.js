@@ -79,7 +79,8 @@ if (grid) {
     });
   });
 
-  applyFilter("all");
+  // The public portfolio is focused on design projects; other experiments remain outside the main showcase.
+  applyFilter("design");
 
   // Hitung project asli (bukan sample) + 1 project unggulan
   const counter = document.getElementById("project-count");
