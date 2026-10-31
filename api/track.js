@@ -33,8 +33,9 @@ module.exports = async (req, res) => {
       headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
       body: JSON.stringify(row)
     });
-    return res.status(r.ok ? 204 : 502).end();
-  } catch {
-    return res.status(502).end();
+        if (r.ok) return res.status(204).end();
+    return res.status(502).json({ status: r.status, detail: (await r.text()).slice(0, 300) });
+  } catch (e) {
+    return res.status(502).json({ error: String(e).slice(0, 200) });
   }
 };
