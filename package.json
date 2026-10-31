@@ -1,0 +1,21 @@
+{
+  "name": "miftahul-arif-portfolio-main",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for **Miftahul Arif**, focused on:",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1997miftahularif/miftahul-arif-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/1997miftahularif/miftahul-arif-portfolio/issues"
+  },
+  "homepage": "https://github.com/1997miftahularif/miftahul-arif-portfolio#readme"
+}
