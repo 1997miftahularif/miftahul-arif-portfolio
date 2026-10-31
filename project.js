@@ -3,7 +3,7 @@ const root = document.getElementById("project-root");
 const list = Array.isArray(window.PROJECTS) ? window.PROJECTS : [];
 
 const KICKER = {
-  automation: "AUTOMATION CASE STUDY",
+  automation: "WEB DEVELOPMENT CASE STUDY",
   design: "DESIGN CASE STUDY",
   data: "DATA ANALYSIS CASE STUDY",
 };
@@ -68,8 +68,7 @@ function render(p) {
 
   const links = (d.links || [])
     .map((l, i) => {
-      const external = /^https?:\/\//.test(l.url);
-      return `<a class="button ${i === 0 ? "primary" : "secondary"}" href="${esc(l.url)}"${external ? ' target="_blank" rel="noopener"' : ""}>${esc(l.label)}</a>`;
+      return `<a class="button ${i === 0 ? "primary" : "secondary"}" href="${esc(l.url)}">${esc(l.label)}</a>`;
     })
     .join("");
 
@@ -87,13 +86,15 @@ function render(p) {
       <p class="hero-copy">${esc(d.overview || p.summary)}</p>
       <div class="tags">${(p.tags || []).map((t) => `<span>${esc(t)}</span>`).join("")}</div>
     </div>
+    ${p.image ? `<div class="case-hero-image"><img src="${esc(p.image)}" alt="${esc(p.title)} interface preview"></div>` : ""}
+    ${p.demoUrl ? `<section class="case-section live-demo-section" id="live-demo"><div class="live-demo-heading"><div><p class="section-kicker">TRY THE APPLICATION</p><h2>Live demo</h2><p>Explore the application directly here without leaving this portfolio page.</p></div><span class="demo-note">Demo environment · Sample data</span></div><div class="live-demo-frame"><iframe src="${esc(p.demoUrl)}" title="${esc(p.title)} live demo" loading="lazy" allow="clipboard-read; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe></div><p class="demo-caption">The demo opens inside this page. Any demo data is subject to the application’s own demo-mode behavior.</p></section>` : ""}
     ${meta ? `<section class="meta-grid">${meta}</section>` : ""}
     ${stats ? `<section class="case-section"><p class="section-kicker">KEY NUMBERS</p><div class="case-grid three">${stats}</div></section>` : ""}
     ${sections ? `<section class="case-section"><p class="section-kicker">THE STORY</p><div class="case-grid two">${sections}</div></section>` : ""}
     ${palette ? `<section class="case-section"><p class="section-kicker">COLOR PALETTE</p><div class="palette">${palette}</div></section>` : ""}
     ${gallery ? `<section class="case-section"><p class="section-kicker">GALLERY</p><div class="screenshot-grid gallery-grid">${gallery}</div></section>` : ""}
     <section class="case-section final-case">
-      <div class="hero-actions">${links}<a class="button secondary" href="index.html#contact">Contact Miftahul</a></div>
+      <div class="hero-actions">${p.demoUrl ? '<a class="button primary" href="#live-demo">Try live demo ↓</a>' : ""}${links}<a class="button secondary" href="index.html#contact">Contact Miftahul</a></div>
       ${nextHtml}
     </section>`;
 

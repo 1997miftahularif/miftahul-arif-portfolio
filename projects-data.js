@@ -288,4 +288,63 @@ window.PROJECTS = [
 
   // ---------- AUTOMATION (tambahan) ----------
   // { id: "...", category: "automation", title: "...", year: "2026", summary: "...", tags: ["..."], image: "", detail: { ... } },
+
+  // ---------- NON-DESIGN / WEB DEVELOPMENT ----------
+  {
+    id: "employee-activity-attendance-reporting-system",
+    category: "automation",
+    title: "Employee Activity & Attendance Reporting System",
+    year: "2026",
+    summary: "A web application that replaces manual monthly activity and attendance reporting with a structured submission, review, approval, and revision workflow.",
+    tags: ["Web Application", "HTML", "CSS", "JavaScript", "Supabase", "PostgreSQL", "Workflow Automation"],
+    image: "assets/images/projects/non-design/employee-activity-attendance-system.png",
+    demoUrl: "https://visualcreation1997-tech.github.io/livedemo/",
+    detail: {
+      overview: "A web application designed to replace a manual monthly employee activity and attendance reporting process with a structured digital submission and review workflow. The application was designed around an actual operational process and developed through hands-on, AI-assisted development.",
+      meta: [
+        { label: "Project type", value: "Web application / workflow system" },
+        { label: "Year", value: "2026" },
+        { label: "Focus", value: "Employee reporting, attendance tracking, review and document automation" },
+        { label: "Development approach", value: "Hands-on, AI-assisted development" }
+      ],
+      sections: [
+        {
+          title: "The objective",
+          text: "Replace a manual monthly activity and attendance reporting process with a centralized application that organizes employee submissions and administrative review."
+        },
+        {
+          title: "Key features",
+          bullets: [
+            "Employee authentication and login",
+            "Monthly activity reporting",
+            "Attendance records",
+            "Photo uploads",
+            "Admin dashboard",
+            "Submit and review workflow",
+            "Approve and revision workflow",
+            "Automated Word report generation"
+          ]
+        },
+        {
+          title: "Technology stack",
+          bullets: [
+            "HTML, CSS and JavaScript for the web interface",
+            "Supabase Auth for employee authentication",
+            "PostgreSQL for structured data storage",
+            "Row Level Security (RLS) for database access control",
+            "Cloudinary for photo uploads and media handling",
+            "docx.js for automated Word document generation"
+          ]
+        },
+        {
+          title: "Development scope",
+          text: "The project demonstrates practical experience translating an operational workflow into a web-based system, connecting authentication, database records, file uploads, role-aware access, review states and document generation."
+        }
+      ],
+      gallery: [
+        { src: "assets/images/projects/non-design/employee-activity-attendance-system.png", caption: "Employee activity and attendance reporting interface" }
+      ],
+      links: []
+    }
+  },
 ];
