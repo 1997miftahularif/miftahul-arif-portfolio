@@ -297,7 +297,7 @@ window.PROJECTS = [
     year: "2026",
     summary: "A web application that replaces manual monthly activity and attendance reporting with a structured submission, review, approval, and revision workflow.",
     tags: ["Web Application", "HTML", "CSS", "JavaScript", "Supabase", "PostgreSQL", "Workflow Automation"],
-    image: "assets/images/projects/non-design/employee-activity-attendance-system.png",
+    image: "",
     demoUrl: "https://visualcreation1997-tech.github.io/livedemo/",
     detail: {
       overview: "A web application designed to replace a manual monthly employee activity and attendance reporting process with a structured digital submission and review workflow. The application was designed around an actual operational process and developed through hands-on, AI-assisted development.",
@@ -341,9 +341,7 @@ window.PROJECTS = [
           text: "The project demonstrates practical experience translating an operational workflow into a web-based system, connecting authentication, database records, file uploads, role-aware access, review states and document generation."
         }
       ],
-      gallery: [
-        { src: "assets/images/projects/non-design/employee-activity-attendance-system.png", caption: "Employee activity and attendance reporting interface" }
-      ],
+      gallery: [],
       links: []
     }
   },
