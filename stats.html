@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Statistik Kunjungan</title>
+<style>
+:root{--bg:#fff;--card:#f5f5f4;--tx:#1c1917;--mu:#78716c;--ac:#c2410c;--bd:#e7e5e4}
+@media(prefers-color-scheme:dark){:root{--bg:#141210;--card:#1f1c19;--tx:#f5f5f4;--mu:#a8a29e;--ac:#fb923c;--bd:#2e2a26}}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,sans-serif;background:var(--bg);color:var(--tx);padding:24px 16px}
+main{max-width:1000px;margin:auto}h1{font-size:22px;margin:0 0 4px}.mu{color:var(--mu)}
+.bar{display:flex;gap:8px;align-items:center;margin:16px 0;flex-wrap:wrap}
+select,input,button{font:inherit;padding:8px 12px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx)}
+button{cursor:pointer;background:var(--ac);color:#fff;border-color:var(--ac)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px;min-width:0}
+.kpi b{display:block;font-size:30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+h2{font-size:14px;margin:0 0 10px;color:var(--mu);text-transform:uppercase;letter-spacing:.05em}
+.row{position:relative;display:flex;justify-content:space-between;gap:8px;padding:4px 8px;margin:2px 0;border-radius:6px;overflow:hidden}
+.row i{position:absolute;inset:0 auto 0 0;background:var(--ac);opacity:.18}.row span{position:relative;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.daily{display:flex;align-items:flex-end;gap:2px;height:90px}.daily div{flex:1;background:var(--ac);min-height:2px;border-radius:2px 2px 0 0}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--bd);white-space:nowrap}
+#err{color:#dc2626}
+</style>
+</head>
+<body>
+<main>
+<h1>Statistik Kunjungan</h1>
+<p class="mu">Halaman privat — hanya bisa dibuka dengan kunci admin.</p>
+<div class="bar">
+  <input id="key" type="password" placeholder="Kunci admin" autocomplete="current-password">
+  <select id="days"><option value="7">7 hari</option><option value="30" selected>30 hari</option><option value="90">90 hari</option><option value="365">1 tahun</option></select>
+  <button id="go">Tampilkan</button><span id="err"></span>
+</div>
+<div id="out" hidden>
+  <div class="kpi"><div class="card"><b id="total">0</b>Total kunjungan</div><div class="card"><b id="uniq">0</b>Pengunjung unik</div><div class="card"><b id="nc">0</b>Negara</div></div>
+  <div class="card" style="margin-bottom:12px"><h2>Kunjungan per hari</h2><div class="daily" id="daily"></div></div>
+  <div class="grid">
+    <div class="card"><h2>Negara</h2><div id="countries"></div></div>
+    <div class="card"><h2>Kota</h2><div id="cities"></div></div>
+    <div class="card"><h2>Halaman</h2><div id="pages"></div></div>
+    <div class="card"><h2>Asal (referrer)</h2><div id="referrers"></div></div>
+    <div class="card"><h2>Perangkat</h2><div id="devices"></div></div>
+  </div>
+  <div class="card" style="margin-top:12px"><h2>50 kunjungan terakhir</h2><div class="tw"><table><thead><tr><th>Waktu</th><th>Lokasi</th><th>Halaman</th><th>Asal</th><th>Perangkat</th></tr></thead><tbody id="recent"></tbody></table></div></div>
+</div>
+</main>
+<script>
+// Perangkat ini tidak akan dihitung sebagai kunjungan.
+try { localStorage.setItem('noTrack', '1'); } catch (e) {}
+const $ = (id) => document.getElementById(id);
+const cn = (() => { try { return new Intl.DisplayNames(['id'], { type: 'region' }); } catch { return null; } })();
+const country = (c) => (c && cn ? cn.of(c) : c) || 'Tidak diketahui';
+function list(id, items, label) {
+  const el = $(id); el.textContent = '';
+  if (!items.length) { el.textContent = '—'; el.className = 'mu'; return; }
+  const max = items[0].count;
+  items.forEach((it) => {
+    const row = document.createElement('div'); row.className = 'row';
+    const bar = document.createElement('i'); bar.style.width = (it.count / max * 100) + '%';
+    const a = document.createElement('span'); a.textContent = label ? label(it.name) : it.name;
+    const b = document.createElement('span'); b.textContent = it.count;
+    row.append(bar, a, b); el.append(row);
+  });
+}
+async function load() {
+  $('err').textContent = '';
+  const key = $('key').value || sessionStorage.getItem('ak') || '';
+  const r = await fetch('/api/stats?days=' + $('days').value, { headers: { 'x-admin-key': key } });
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) { $('err').textContent = d.error || 'Gagal memuat'; return; }
+  sessionStorage.setItem('ak', key); $('out').hidden = false;
+  $('total').textContent = d.total; $('uniq').textContent = d.unique; $('nc').textContent = d.countries.length;
+  const mx = Math.max(1, ...d.daily.map((x) => x.count)); $('daily').textContent = '';
+  d.daily.forEach((x) => { const b = document.createElement('div'); b.style.height = (x.count / mx * 100) + '%'; b.title = x.name + ': ' + x.count; $('daily').append(b); });
+  list('countries', d.countries, country); list('cities', d.cities);
+  list('pages', d.pages); list('referrers', d.referrers); list('devices', d.devices);
+  $('recent').textContent = '';
+  d.recent.forEach((v) => {
+    const tr = document.createElement('tr');
+    [new Date(v.created_at).toLocaleString('id-ID'), [v.city, v.region, country(v.country)].filter(Boolean).join(', '), v.path, v.referrer || 'langsung', v.device]
+      .forEach((t) => { const td = document.createElement('td'); td.textContent = t; tr.append(td); });
+    $('recent').append(tr);
+  });
+}
+$('go').onclick = load; $('days').onchange = () => $('key').value || sessionStorage.getItem('ak') ? load() : 0;
+$('key').addEventListener('keydown', (e) => e.key === 'Enter' && load());
+if (sessionStorage.getItem('ak')) load();
+</script>
+</body>
+</html>
