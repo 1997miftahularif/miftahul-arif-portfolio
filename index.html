@@ -12,6 +12,9 @@
     <link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -35,16 +38,57 @@
                         class="btn" href="assets/files/Portfolio Design Arif 2026.pdf" target="_blank"
                         rel="noopener">Portfolio PDF ↗</a></div>
             </div>
-            <div class="motion" aria-hidden="true">
-                <div class="board"><i class="g g-img"></i><i class="g g-sel"><b></b><b></b><b></b><b></b></i><i
-                        class="g g-t1"></i><i class="g g-t2"></i><i class="g g-l1"></i><i class="g g-l2"></i><i
-                        class="g g-l3"></i><i class="g g-c1"></i><i class="g g-c2"></i><i class="g g-c3"></i><i
-                        class="g g-btn"></i>
-                    <div class="m-cur"><svg width="16" height="22" viewBox="0 0 14 21">
-                            <path d="M1 1v16l4.4-3.9 3 6.4 2.6-1.2-3-6.2H13z" fill="#171717" stroke="#fff"
-                                stroke-width="1.5" stroke-linejoin="round" />
-                        </svg><span>Arif</span></div>
+            <div class="motion lux" aria-hidden="true">
+                <div class="lux-glow"></div>
+                <div class="lux-orbit"><i></i></div>
+                <div class="lux-window">
+                    <div class="lux-bar"><b></b><b></b><b></b></div>
+                    <div class="lux-stage">
+                        <svg viewBox="0 0 300 214" width="300" height="214">
+                            <defs>
+                                <linearGradient id="luxGold" gradientUnits="userSpaceOnUse" x1="70" y1="50" x2="230" y2="172">
+                                    <stop offset="0" stop-color="#fff2b0" />
+                                    <stop offset=".45" stop-color="#f1c83b" />
+                                    <stop offset="1" stop-color="#b98400" />
+                                </linearGradient>
+                                <linearGradient id="luxSheen" x1="0" x2="1" y1="0" y2="0">
+                                    <stop offset="0" stop-color="#fff" stop-opacity="0" />
+                                    <stop offset=".5" stop-color="#fff" stop-opacity=".9" />
+                                    <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                </linearGradient>
+                                <clipPath id="luxClip"><polygon points="70,84 104,50 196,50 230,84 150,172" /></clipPath>
+                            </defs>
+                            <g class="gem">
+                            <polygon class="facet f1" points="70,84 104,50 112,84" fill="#ffe9a3" />
+                            <polygon class="facet f2" points="104,50 112,84 150,84" fill="#f6cf4d" />
+                            <polygon class="facet f3" points="104,50 196,50 150,84" fill="#fff4cc" />
+                            <polygon class="facet f4" points="196,50 150,84 188,84" fill="#f1c33a" />
+                            <polygon class="facet f5" points="196,50 188,84 230,84" fill="#f4c4a8" />
+                            <polygon class="facet f6" points="70,84 112,84 150,172" fill="#d9a521" />
+                            <polygon class="facet f7" points="112,84 150,84 150,172" fill="#efbb2b" />
+                            <polygon class="facet f8" points="150,84 188,84 150,172" fill="#c98f12" />
+                            <polygon class="facet f9" points="188,84 230,84 150,172" fill="#b9801a" />
+                            </g>
+                            <path class="fl" pathLength="100" d="M104 50 L112 84 M104 50 L150 84 M196 50 L150 84 M196 50 L188 84 M112 84 L150 172 M150 84 L150 172 M188 84 L150 172" />
+                            <path class="gd" pathLength="100" d="M70 84 H230" />
+                            <g clip-path="url(#luxClip)"><rect class="sheen" x="-30" y="30" width="70" height="170" fill="url(#luxSheen)" /></g>
+                            <path class="ol" pathLength="100" d="M70 84 L104 50 L196 50 L230 84 L150 172 Z" />
+                            <rect class="an an-a" x="66" y="80" width="8" height="8" rx="1.5" />
+                            <rect class="an an-b" x="100" y="46" width="8" height="8" rx="1.5" />
+                            <rect class="an an-c" x="192" y="46" width="8" height="8" rx="1.5" />
+                            <rect class="an an-d" x="226" y="80" width="8" height="8" rx="1.5" />
+                            <rect class="an an-e" x="146" y="168" width="8" height="8" rx="1.5" />
+                            <g transform="translate(112 60)"><path class="spk spk1" d="M0-11Q0 0 11 0Q0 0 0 11Q0 0-11 0Q0 0 0-11Z" /></g>
+                            <g transform="translate(190 58)"><path class="spk spk2" d="M0-8Q0 0 8 0Q0 0 0 8Q0 0-8 0Q0 0 0-8Z" /></g>
+                        </svg>
+                        <div class="lux-cursor"><svg width="16" height="22" viewBox="0 0 14 21">
+                                <path d="M1 1v16l4.4-3.9 3 6.4 2.6-1.2-3-6.2H13z" fill="#171717" stroke="#fff" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg><span>Arif</span></div>
+                    </div>
                 </div>
+                <div class="lux-orb"></div>
+                <div class="lux-swatches"><i></i><i></i><i></i></div>
+                <div class="lux-type">Aa</div>
             </div>
         </section>
         <section id="about" class="section wrap">

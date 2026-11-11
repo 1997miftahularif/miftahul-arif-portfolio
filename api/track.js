@@ -6,9 +6,7 @@ const clip = (v, n) => (typeof v === 'string' && v ? v.slice(0, n) : null);
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).end();
-  const env = process.env;
-const SUPABASE_URL = (env.SUPABASE_URL || '').trim().replace(/\/+$/, '').replace(/\/rest\/v1$/, '');
-const KEY = (env.SUPABASE_SERVICE_ROLE_KEY || '').trim().replace(/^["']|["']$/g, '');
+  const { SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: KEY } = process.env;
   if (!SUPABASE_URL || !KEY) return res.status(500).json({ error: 'Tracking belum dikonfigurasi' });
 
   const h = req.headers;

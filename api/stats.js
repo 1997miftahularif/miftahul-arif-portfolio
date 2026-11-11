@@ -9,10 +9,7 @@ const tally = (rows, fn, limit = 15) => {
 
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
-  const env = process.env;
-  const ADMIN_KEY = (env.ADMIN_KEY || '').trim();
-  const SUPABASE_URL = (env.SUPABASE_URL || '').trim().replace(/\/+$/, '').replace(/\/rest\/v1$/, '');
-  const KEY = (env.SUPABASE_SERVICE_ROLE_KEY || '').trim().replace(/^["']|["']$/g, '');
+  const { ADMIN_KEY, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: KEY } = process.env;
   if (!ADMIN_KEY || !SUPABASE_URL || !KEY) return res.status(500).json({ error: 'Environment variable belum lengkap' });
 
   const given = Buffer.from(String(req.headers['x-admin-key'] || ''));
@@ -35,8 +32,8 @@ module.exports = async (req, res) => {
       rows.push(...page);
       if (page.length < 1000) break;
     }
-  } catch (e) {
-    return res.status(502).json({ error: 'Gagal menghubungi database: ' + String((e && e.cause) || e).slice(0, 200) });
+  } catch {
+    return res.status(502).json({ error: 'Gagal menghubungi database' });
   }
 
   res.json({
