@@ -6,7 +6,9 @@ const clip = (v, n) => (typeof v === 'string' && v ? v.slice(0, n) : null);
 
 module.exports = async (req, res) => {
   if (req.method !== 'POST') return res.status(405).end();
-  const { SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY: KEY } = process.env;
+  const env = process.env;
+const SUPABASE_URL = (env.SUPABASE_URL || '').trim().replace(/\/+$/, '').replace(/\/rest\/v1$/, '');
+const KEY = (env.SUPABASE_SERVICE_ROLE_KEY || '').trim().replace(/^["']|["']$/g, '');
   if (!SUPABASE_URL || !KEY) return res.status(500).json({ error: 'Tracking belum dikonfigurasi' });
 
   const h = req.headers;
@@ -33,7 +35,7 @@ module.exports = async (req, res) => {
       headers: { apikey: KEY, Authorization: `Bearer ${KEY}`, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
       body: JSON.stringify(row)
     });
-        if (r.ok) return res.status(204).end();
+    if (r.ok) return res.status(204).end();
     return res.status(502).json({ status: r.status, detail: (await r.text()).slice(0, 300) });
   } catch (e) {
     return res.status(502).json({ error: String(e).slice(0, 200) });
